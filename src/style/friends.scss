@@ -1,0 +1,120 @@
+.friends-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 11em;
+
+    .top-column {
+        display: flex;
+        margin-right: 1.1em;
+        margin-top: 13em;
+
+        .activity-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .activity-description {
+                font-family: 'Odibee Sans', cursive;
+                margin-right: 1em;
+                display: flex;
+                flex-direction: column;
+                font-size: 16px;
+
+                .leb-activity {
+                    display: flex;
+                    margin-top: 1.5em;
+
+                    h4 {
+                        margin-right: 6px;
+                    }
+
+                    svg {
+                        margin-top: 23px;
+                        color: rgb(5, 209, 5);                  
+                    }
+                }
+
+                .friendly-activity {
+                    display: flex;
+                    padding-left: 13px;
+                    margin-top: -2.3em;
+
+                    h4 {
+                        margin-right: 6px;
+                    }
+
+                    svg {
+                        margin-top: 23px; 
+                        color: rgb(240, 34, 6);
+                    }
+                }
+            }
+        }
+  
+        .header {
+            font-family: 'Piedra', cursive;
+            letter-spacing: 3px;
+            color: rgb(0, 148, 247);
+            margin-right: 10px;
+            margin-top: 2em;
+        }
+
+        .profile-button {
+            color: rgb(4, 91, 150);
+            font-size: 2.3em;
+            margin-top: 1em;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+    }
+
+    .bottom-column {
+        
+        .left-side {
+            .buisiness-textarea {
+
+                h4 {
+                    margin-bottom: -1.7em;
+                    margin-left: 2.7em;
+                }
+            
+                textarea {
+                    width: 13em;
+                    height: 8em;
+                    resize: none;  
+                    margin-top: 2em;
+                    border-width: 2px;
+                    border-color: rgb(0, 148, 247);
+                    border-radius: 8px;          
+                }
+            }
+
+            .about-textarea { 
+
+                h4 {
+                    margin-bottom: -14px;
+                    margin-left: 4em;
+                }
+            
+                textarea {
+                    width: 13em;
+                    height: 8em;
+                    margin-right: 10em;
+                    margin-top: 1em;
+                    margin-bottom: 2em;
+                    border-width: 2px;
+                    border-color: rgb(0, 148, 247);
+                    border-radius: 8px;
+                    resize: none;
+                }
+            }
+        }
+
+        .right-side {
+            background-color: red;
+        }
+    }
+}
