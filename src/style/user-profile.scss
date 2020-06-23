@@ -2,4 +2,102 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
+
+    .name-input input {
+        border: none;
+        font-family: 'Kaushan Script', cursive;
+        font-size: 15px;
+        border-bottom: 2px solid rgb(0, 148, 247);
+        margin-top: 10px;
+        padding-right: 8em;
+    }
+
+    .name-input input:focus {
+        outline: none; 
+    }
+
+    .top-of-activity-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 16px;
+
+        .penut {
+            margin-top: 2.5em;
+        }
+
+        .just-nut {
+            margin-top: -2.5em;
+        }
+    }
+
+    .avtivity-buttons {
+        display: flex;
+        font-family: 'Odibee Sans', cursive;
+        margin-top: -2.2em;
+        font-size: 24px;
+
+        .leb-button {
+            display: flex;
+
+            .leb-icon {
+                margin-top: 33px;
+                margin-left: 5px;
+            }
+        }
+
+        .friendly-button {
+            display: flex;
+            margin-left: 40px;
+
+            .friendly-icon {
+                margin-top: 33px;
+                margin-left: 5px;
+            }
+        }
+    } 
+    
+    .business-edit-textarea {
+        margin-top: -1.8em;
+
+        h4 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0em;
+        }
+
+        textarea {
+            width: 20em;
+            height: 10em;
+            resize: none;  
+            border-width: 2px;
+            border-color: rgb(0, 148, 247);
+            border-radius: 8px;          
+        }
+    }
+
+    .about-edit-textarea {
+        h4 {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0em;
+        }
+
+        textarea {
+            width: 20em;
+            height: 10em;
+            resize: none;  
+            border-width: 2px;
+            border-color: rgb(0, 148, 247);
+            border-radius: 8px;          
+        }
+    }
+}
+
+.red-icon {
+    color: rgb(240, 34, 6);
+}
+
+.green-icon {
+    color: rgb(5, 209, 5);
 }

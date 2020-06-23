@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
+import axios from 'axios';
 
 export default class Friends extends Component {
     constructor() {
         super();
 
         this.state = {
-            name: "",
+            name: "", 
             inLebaron: false,
             friendly: false,
-            buisiness: "flklgjsfklg s ig p[sjg psf gps asdfasdoif asdfa sdf asdf asd f asdf asd f asd fa sdf asd fs df asdf afsd fsf asd fs df asdf asdfasdfas dfsdfa sd f asd f asd fasdf asdfasdf asdfasd fas df asdf asdfasd fas dfasdf asdfasdf as df asdf asd fasdfas dfasdfa sdfasdfasd f asdf as df asd f sdf sad f asd f asdf ",
-            about: "",
+            business: "",
+            about: ""
         }
+    }
+
+    componentDidMount() {
+        axios.get("http://localhost:3000/users/1").then((res) => {
+            this.setState({
+                friendly: res.data.friendly,
+                inLebaron: res.data.inLebaron,
+                name: res.data.name,
+                business: res.data.business,
+                about: res.data.about
+            });
+        });
     }
 
     render() {
@@ -34,25 +47,35 @@ export default class Friends extends Component {
                     <div className="header">
                         <h2>FRIENDS</h2>
                     </div>
-                    <div className="profile-button">
-                        <NavLink to="/user-profile" activeClassName="nav-link-active">
-                            <i class="fas fa-user-alt"></i>
-                        </NavLink>
+                    <div className="user-edit-container">
+                        <div className="user-edit">
+                            <NavLink to="/user-profile" activeClassName="nav-link-active">
+                                <FontAwesomeIcon icon="user-edit"/>
+                            </NavLink>
+                            <div className="your-name">
+                            <h6>{this.state.name}</h6>
+                        </div>
+                        </div>
+                        
                     </div>
                 </div>
                 <div className="bottom-column">
                     <div className='left-side'>
                         <div className="buisiness-textarea">
                             <h4>BUISINESS</h4>
-                            <textarea placeholder="Write my buisness message here" readOnly>
-                                {this.state.buisiness}
-                            </textarea>
+                            <textarea
+                                placeholder="This person doesn't have their business set up yet." 
+                                readOnly
+                                value={this.state.business}
+                            />
                         </div>
                         <div className="about-textarea">
                             <h4>ABOUT</h4>
-                            <textarea placeholder="Write my about message here" readOnly>
-                                {this.state.about}
-                            </textarea>
+                            <textarea 
+                                placeholder="This person has nothing to say about themself." 
+                                readOnly
+                                value={this.state.about}
+                            />
                         </div>
                     </div>
                     <div className="right-side">

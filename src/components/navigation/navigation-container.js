@@ -6,7 +6,9 @@ const NavigationComponent = () => {
     return (
         <div className="nav-wrapper">
             <div className="top-side">
-                <h1>Spriendsy</h1>
+                <div className="spriendsy">
+                    <h1>Spriendsy</h1>
+                </div>
             </div>
             <div className="bottom-side">
                 <div className="nav-link-wrapper-1">
