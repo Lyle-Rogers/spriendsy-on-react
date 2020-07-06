@@ -7,7 +7,6 @@
 
     .top-column {
         display: flex;
-        margin-right: 1.1em;
         margin-top: 13em;
         height: 60px;
 
@@ -15,10 +14,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            // margin-left: 2em;
+            // margin-right: 2em;
+            // width: 5.5em;
 
             .activity-description {
                 font-family: 'Odibee Sans', cursive;
-                margin-right: 1em;
+                margin-right: 10px;
                 display: flex;
                 flex-direction: column;
                 font-size: 16px;
@@ -29,12 +31,11 @@
                     margin-top: 5px;
 
                     h4 {
-                        margin-right: 6px;
+                        margin-right: 4px;
                     }
 
                     svg {
                         margin-top: 23px;
-                        color: rgb(5, 209, 5);                  
                     }
                 }
 
@@ -44,49 +45,45 @@
                     margin-top: -2.4em;
 
                     h4 {
-                        margin-right: 6px;
+                        margin-right: 4px;
                     }
 
                     svg {
                         margin-top: 23px; 
-                        color: rgb(240, 34, 6);
                     }
                 }
             }
-        }
-  
-        .header {
-            font-family: 'Piedra', cursive; 
-            letter-spacing: 3px;
-            color: rgb(0, 148, 247);
-            margin-top: 7px;
         }
 
         .user-edit {
             display: flex;
             flex-direction: column;
-            font-size: 2.3em;
-            margin-left: 10px;
-            
+            align-items: center;
+            margin-left: 6em;
+
             svg {
                 color: #bd8100;
-                padding-top: 23px;
-                margin-bottom: 0px;
+                padding-top: 26px;
+                font-size: 2em;
+                margin-bottom: -7px;
             }
 
-            .your-name {
-                font-size: large;
-                margin-top: -10px;
-
-                h6 {
-                    color: #a01111;
+            .user-name {
+                input {
+                    font-family: 'Sriracha', cursive;
+                    color: #000000;
+                    font-size: 12px;
+                    width: 10em;
+                    border: none;
+                    text-align: center;
+                    background: transparent;
+                    outline: none;
                 }
             }
         }
     }
 
     .bottom-column {
-        
         .left-side {
             .buisiness-textarea {
 
@@ -96,13 +93,16 @@
                 }
             
                 textarea {
+                    font-family: 'Teko', sans-serif;
                     width: 13em;
                     height: 8em;
                     resize: none;  
                     margin-top: 2em;
                     border-width: 2px;
                     border-color: rgb(0, 148, 247);
-                    border-radius: 8px;          
+                    border-radius: 8px;  
+                    outline: none;   
+                    line-height: 13px;     
                 }
             }
 
@@ -114,6 +114,8 @@
                 }
             
                 textarea {
+                    font-family: 'Teko', sans-serif;
+                    outline: none;        
                     width: 13em;
                     height: 8em;
                     margin-right: 10em;
@@ -123,6 +125,7 @@
                     border-color: rgb(0, 148, 247);
                     border-radius: 8px;
                     resize: none;
+                    line-height: 13px;     
                 }
             }
         }

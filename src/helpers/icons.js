@@ -1,8 +1,8 @@
-import {faCannabis, faJedi, faUserEdit} from "@fortawesome/free-solid-svg-icons";
+import {faCannabis, faJedi, faUserEdit, faPlaceOfWorship, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 const Icons = () => {
-    return library.add(faCannabis, faJedi, faUserEdit);  
+    return library.add(faCannabis, faJedi, faUserEdit, faPlaceOfWorship, faSignOutAlt, );  
 };
 
 export default Icons;

@@ -3,12 +3,27 @@
     flex-direction: column;
     align-items: center; 
 
+    .signout-container { 
+        font-size: 22px;
+        margin-top: 7px;
+
+        a {
+            font-family: 'Roboto', sans-serif;
+            color: rgb(0, 197, 0);
+            text-decoration: none;
+
+            svg {
+                margin-left: 5px;
+            }
+        }
+    }
+
     .name-input input {
         border: none;
-        font-family: 'Kaushan Script', cursive;
+        font-family: 'Sriracha', cursive;
         font-size: 15px;
         border-bottom: 2px solid rgb(0, 148, 247);
-        margin-top: 10px;
+        margin-top: 7px;
         padding-right: 8em;
     }
 
@@ -67,11 +82,13 @@
         }
 
         textarea {
+            font-family: 'Teko', sans-serif;
             width: 20em;
             height: 10em;
             resize: none;  
             border-width: 2px;
             border-color: rgb(0, 148, 247);
+            line-height: 13px;     
             border-radius: 8px;          
         }
     }
@@ -84,12 +101,41 @@
         }
 
         textarea {
+            font-family: 'Teko', sans-serif;
             width: 20em;
             height: 10em;
             resize: none;  
             border-width: 2px;
             border-color: rgb(0, 148, 247);
-            border-radius: 8px;          
+            border-radius: 8px; 
+            line-height: 13px;     
+            margin-bottom: -2.5em;      
+        }
+    }
+
+    .save-btn {
+        border: none;
+        outline: none;
+        height: 30px;
+        margin-top: 50px;
+        background: none;
+
+        .save-button-text {
+            background-color: rgb(5, 209, 5);
+            font-family: 'Piedra', cursive;
+            font-size: 17px;
+            border-radius: 12px;
+            margin-bottom: -11px;
+            padding: 6px 9px 5px 9px;
+        }
+
+        .worship-icon {
+            svg {
+                color: rgb(5, 209, 5);
+                transform: rotate(180deg);
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
         }
     }
 }

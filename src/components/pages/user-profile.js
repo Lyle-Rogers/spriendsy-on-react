@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { NavLink } from "react-router-dom";
 
 function RedIcon(props) {
     return (
@@ -23,8 +24,8 @@ function GreenIcon(props) {
 }
 
 export default class UserProfile extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             name: "",
@@ -33,72 +34,57 @@ export default class UserProfile extends Component {
             business: "",
             about: ""
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.friendlyButtonClick = this.friendlyButtonClick.bind(this);
         this.lebButtonClick = this.lebButtonClick.bind(this);
-        this.nameChange = this.nameChange.bind(this);
-        this.businessChange = this.businessChange.bind(this);
-        this.aboutChange = this.aboutChange.bind(this);
+        this.friendlyButtonClick = this.friendlyButtonClick.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    aboutChange(e) {
-        axios.patch('http://localhost:3000/users/1', {
-            about: e.target.value
-        }).then((res) => {
-            this.setState({
-                about: res.data.value
-            })
+    handleSubmit() {
+        axios.patch("http://localhost:3000/users/1", {
+            name: this.state.name,
+            friendly: this.state.friendly,
+            inLebaron: this.state.inLebaron,
+            business: this.state.business,
+            about: this.state.about
         })
-    }
 
-    businessChange(e) {
-        axios.patch('http://localhost:3000/users/1', {
-            business: e.target.value
-        }).then((res) => {
-            this.setState({
-                business: res.data.value
-            })
-        })
+        event.preventDefault(); 
+        this.props.history.push("/friends");
     }
 
     lebButtonClick() {
         if (this.state.inLebaron === false) {
-            axios.patch('http://localhost:3000/users/1', {
-                inLebaron: true,
-            }).then((res) => {
-                this.setState({
-                    inLebaron: res.data.inLebaron
-                })
+            this.setState({
+                inLebaron: true
             })
-        } else {
-            axios.patch('http://localhost:3000/users/1', {
-                inLebaron: false,
-            }).then((res) => {
-                this.setState({
-                    inLebaron: res.data.inLebaron
-                })
+        } 
+        
+        if (this.state.inLebaron === true) {
+            this.setState({
+                inLebaron: false
             })
         }
     }
 
     friendlyButtonClick() {
         if (this.state.friendly === false) {
-            axios.patch('http://localhost:3000/users/1', {
-            friendly: true,
-            }).then((res) => {
-                this.setState({
-                    friendly: res.data.friendly
-                })
+            this.setState({
+                friendly: true
             })
-        } else {
-            axios.patch('http://localhost:3000/users/1', {
-            friendly: false,
-            }).then((res) => {
-                this.setState({
-                    friendly: res.data.friendly
-                })
+        } 
+        
+        if (this.state.friendly === true) {
+            this.setState({
+                friendly: false
             })
         }
+    }
+
+    handleChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
     componentDidMount() {
@@ -113,46 +99,38 @@ export default class UserProfile extends Component {
         });
     }
 
-    handleChange(e) {
-        this.setState({ [e.target.name] : e.target.value });
-     }
-
-    nameChange(e) {
-        axios.patch("http://localhost:3000/users/1", {
-            name: e.target.value
-        }).then((res) => {
-            this.setState({
-                name: res.data.value
-            })
-        })
-    }     
-
     render() {
         let lebButton;
         let friendlyButton;
 
-        if (this.state.inLebaron == false) {
+        if (this.state.inLebaron === false) {
             lebButton = <RedIcon onClick={this.lebButtonClick}/>;
         } else {
             lebButton = <GreenIcon onClick={this.lebButtonClick}/>;
         }
 
-        if (this.state.friendly == false) {
+        if (this.state.friendly === false) {
             friendlyButton = <RedIcon onClick={this.friendlyButtonClick}/>;
         } else {
             friendlyButton = <GreenIcon onClick={this.friendlyButtonClick}/>;
         }
         
         return (
-            <div className="user-profile-container">
+            <form onSubmit={this.handleSubmit} className="user-profile-container">
+                <div className="signout-container">
+                    <a onClick={this.props.signOutClick}>
+                        SIGN OUT
+                        <FontAwesomeIcon icon="sign-out-alt"/>
+                    </a>
+                </div>
                 <div className="name-input">
                     <input 
-                        name="namey"
+                        name="name"
                         type="text"
-                        placeholder="Full name"
+                        placeholder="Your name"
                         value={this.state.name}
-                        onChange={this.nameChange}
-                        autoCorrect="none"
+                        onChange={this.handleChange}
+                        maxLength="20"
                     />
                 </div>
                 <div className="top-of-activity-buttons">
@@ -179,7 +157,8 @@ export default class UserProfile extends Component {
                         placeholder="Edit your business"
                         name="business"
                         value={this.state.business}
-                        onChange={this.businessChange}
+                        maxLength="9721"
+                        onChange={this.handleChange}
                     />
                 </div>
                 <div className="about-edit-textarea">
@@ -188,10 +167,19 @@ export default class UserProfile extends Component {
                         placeholder="Edit your about status"
                         name="about"
                         value={this.state.about}
-                        onChange={this.aboutChange}
+                        maxLength="9721"
+                        onChange={this.handleChange}
                     />
                 </div>
-            </div>
+                <button className="save-btn" type="submit">
+                    <div className="save-button-text">
+                        SAVE
+                    </div>
+                    <div className="worship-icon">
+                        <FontAwesomeIcon icon="place-of-worship"/>
+                    </div>
+                </button>
+            </form>
         );
     }
 }
