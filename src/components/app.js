@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import axios from 'axios';
 
 import NavigationContainer from "./navigation/navigation-container";
 import Friends from "./pages/friends";
@@ -16,17 +17,22 @@ export default class App extends Component {
     Icons();
 
     this.state = {
-      loggedInStatus: "LOGGED_IN"
+      loggedInStatus: "NOT_LOGGED_IN",
+      userId: ""
     }
 
     this.signOutClick = this.signOutClick.bind(this);
-    this.fuckFunction = this.fuckFunction.bind(this);
+    this.unlockSpriendsy = this.unlockSpriendsy.bind(this);
   }
   
-  fuckFunction() {
-    this.setState({
-      loggedInStatus: "LOGGED_IN"
-    })
+  unlockSpriendsy() {
+    if (this.state.id === this.state.nameInput || this.state.password === this.state.passwordInput) {
+      this.setState({
+        loggedInStatus: "LOGGED_IN"
+      })
+    }
+
+    event.preventDefault(); 
   }
 
   signOutClick() {
@@ -34,7 +40,7 @@ export default class App extends Component {
           loggedInStatus: "NOT_LOGGED_IN"
       })
   }
-
+  
   render() {
     if (this.state.loggedInStatus === "LOGGED_IN") {
       return (
@@ -63,7 +69,7 @@ export default class App extends Component {
     } else {
       return (
         <Login 
-          fuckFunction={this.fuckFunction}
+          unlockSpriendsy={this.unlockSpriendsy}
         />
       )
     }

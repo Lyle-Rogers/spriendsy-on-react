@@ -24,48 +24,54 @@
         }
     }
 
-    .login-name input {
-        margin-bottom: 5px;
-        border: none;
-        border-bottom: 2px solid rgb(0, 148, 247);
-        padding-right: 2.5em;
-        padding-left: 2.5em;
-        outline: none;
-        text-align: center;
-    }
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    .login-password input {
-        margin-bottom: 2px;
-        border: none;
-        border-bottom: 2px solid rgb(0, 148, 247);
-        padding-right: 2.5em;
-        padding-left: 2.5em;
-        outline: none;
-        text-align: center;
-    }
-
-    .login-btn {
-        border: none;
-        outline: none;
-        height: 30px;
-        margin-top: 1.5em;
-        background: none;
-
-        .login-btn-text {
-            background-color: rgb(5, 209, 5);
-            font-family: 'Piedra', cursive;
-            font-size: 17px;
-            border-radius: 12px;
-            margin-bottom: -11px;
-            padding: 6px 9px 5px 9px;
+        .login-name input {
+            margin-bottom: 5px;
+            border: none;
+            border-bottom: 2px solid rgb(0, 148, 247);
+            padding-right: 2.5em;
+            padding-left: 2.5em;
+            outline: none;
+            text-align: center;
         }
-
-        .worship-icon {
-            svg {
-                color: rgb(5, 209, 5);
-                transform: rotate(180deg);
-                font-size: 35px;
-                margin-bottom: 15px;
+    
+        .login-password input {
+            margin-bottom: 2px;
+            border: none;
+            border-bottom: 2px solid rgb(0, 148, 247);
+            padding-right: 2.5em;
+            padding-left: 2.5em;
+            outline: none;
+            text-align: center;
+        }
+    
+        .login-btn {
+            border: none;
+            outline: none;
+            height: 30px;
+            margin-top: 1.5em;
+            background: none;
+    
+            .login-btn-text {
+                background-color: rgb(5, 209, 5);
+                font-family: 'Piedra', cursive;
+                font-size: 17px;
+                border-radius: 12px;
+                margin-bottom: -11px;
+                padding: 6px 9px 5px 9px;
+            }
+    
+            .worship-icon {
+                svg {
+                    color: rgb(5, 209, 5);
+                    transform: rotate(180deg);
+                    font-size: 35px;
+                    margin-bottom: 15px;
+                }
             }
         }
     }

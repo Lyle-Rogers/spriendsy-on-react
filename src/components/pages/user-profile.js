@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { NavLink } from "react-router-dom";
 
 function RedIcon(props) {
     return (
@@ -28,7 +27,7 @@ export default class UserProfile extends Component {
         super(props);
 
         this.state = {
-            name: "",
+            id: "",
             friendly: false,
             inLebaron: false,
             business: "",
@@ -88,11 +87,11 @@ export default class UserProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3000/users/1").then((res) => {
+        axios.get("http://localhost:3000/users/Liquid T").then((res) => {
             this.setState({
                 friendly: res.data.friendly,
                 inLebaron: res.data.inLebaron,
-                name: res.data.name,
+                id: res.data.id,
                 business: res.data.business,
                 about: res.data.about
             });
