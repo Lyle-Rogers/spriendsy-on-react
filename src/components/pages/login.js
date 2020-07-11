@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 
+import IntruderScull from '../intruder_scull/intruder-scull';
+
 export default class Login extends Component {
     constructor(props) {
         super(props)
@@ -53,7 +55,7 @@ export default class Login extends Component {
                 <div className="login-text">
                     <h6 className='penut'>If you want to become a Spriendsy member, forgot your password, or</h6>
                     <h6 className="just-nut">are havig any trouble loging in, please contact me on WhatsApp at</h6>
-                    <h6 className="just-a-nut">52 636 698 8561 or Facebook Messenger at lyle.rogers.50.</h6>
+                    <h6 className="just-a-nut">52 636 698 8561 or Facebook Messenger at lyle.rogers.50</h6>
                 </div>
                 <form className="login-form" onSubmit={this.intruderCheck}>
                     <div className="login-name">
@@ -81,6 +83,7 @@ export default class Login extends Component {
                         </div>
                     </button>
                 </form>
+                <IntruderScull />
             </div>
         );
     }
