@@ -24,12 +24,11 @@ export default class App extends Component {
     this.unlockSpriendsy = this.unlockSpriendsy.bind(this);
   }
   
-  unlockSpriendsy() {
-    if (this.state.id === this.state.nameInput || this.state.password === this.state.passwordInput) {
+  unlockSpriendsy(theId) {
       this.setState({
-        loggedInStatus: "LOGGED_IN"
+        loggedInStatus: "LOGGED_IN",
+        userId: theId
       })
-    }
 
     event.preventDefault(); 
   }
@@ -39,7 +38,7 @@ export default class App extends Component {
           loggedInStatus: "NOT_LOGGED_IN"
       })
   }
-  
+
   render() {
     if (this.state.loggedInStatus === "LOGGED_IN") {
       return (

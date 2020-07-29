@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 
-import IntruderScull from '../intruder_scull/intruder-scull';
-
 export default class Login extends Component {
     constructor(props) {
         super(props)
@@ -14,6 +12,7 @@ export default class Login extends Component {
             nameInput: "",
             passwordInput: ""
         }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.intruderCheck = this.intruderCheck.bind(this);
@@ -24,7 +23,7 @@ export default class Login extends Component {
             null
         } else {
             if (this.state.id === this.state.nameInput && this.state.password === this.state.passwordInput) {
-                this.props.unlockSpriendsy()
+                this.props.unlockSpriendsy(`${this.state.id}`)
             }
         }
 
@@ -48,6 +47,16 @@ export default class Login extends Component {
         this.handleSubmit();
         event.preventDefault(); 
     }
+
+    //TODO 
+    // componentWillUnmount() {
+    //     this.setState({
+    //         id: null,
+    //         password: "",
+    //         nameInput: "",
+    //         passwordInput: ""
+    //     })
+    // }
 
     render() {
         return (
@@ -83,7 +92,6 @@ export default class Login extends Component {
                         </div>
                     </button>
                 </form>
-                <IntruderScull />
             </div>
         );
     }
