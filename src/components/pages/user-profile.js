@@ -27,8 +27,9 @@ export default class UserProfile extends Component {
         super(props);
 
         this.state = {
-            id: "",
-            friendly: false,
+            userId: "",
+            contactInfo: "",
+            friendly: false, 
             inLebaron: false,
             business: "",
             about: ""
@@ -40,7 +41,7 @@ export default class UserProfile extends Component {
     }
 
     handleSubmit() {
-        axios.patch("http://localhost:3000/users/1", {
+        axios.patch(`http://localhost:3000/users/${this.state.userId}`, {
             name: this.state.name,
             friendly: this.state.friendly,
             inLebaron: this.state.inLebaron,
@@ -87,11 +88,10 @@ export default class UserProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3000/users/Liquid T").then((res) => {
+        axios.get(`http://localhost:3000/users/${this.state.userId}`).then((res) => {
             this.setState({
                 friendly: res.data.friendly,
                 inLebaron: res.data.inLebaron,
-                id: res.data.id,
                 business: res.data.business,
                 about: res.data.about
             });
@@ -99,6 +99,9 @@ export default class UserProfile extends Component {
     }
 
     render() {
+        let theId = this.props.theId;
+        this.state.userId = theId;
+
         let lebButton;
         let friendlyButton;
 

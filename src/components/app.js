@@ -10,14 +10,14 @@ import UserProfile from "./pages/user-profile";
 import Login from "./pages/login";
 
 export default class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     Icons();
 
     this.state = {
       loggedInStatus: "NOT_LOGGED_IN",
-      userId: ""
+      userId: null
     }
 
     this.signOutClick = this.signOutClick.bind(this);
@@ -25,18 +25,18 @@ export default class App extends Component {
   }
   
   unlockSpriendsy(theId) {
-      this.setState({
-        loggedInStatus: "LOGGED_IN",
-        userId: theId
-      })
+    this.setState({
+      loggedInStatus: "LOGGED_IN",
+      userId: theId
+    })
 
-    event.preventDefault(); 
+    event.preventDefault();  
   }
 
   signOutClick() {
-      this.setState({
-          loggedInStatus: "NOT_LOGGED_IN"
-      })
+    this.setState({
+      loggedInStatus: "NOT_LOGGED_IN"
+    })
   }
 
   render() {
@@ -49,7 +49,15 @@ export default class App extends Component {
             </div>
             <Switch>
               <Route exact path="/" component={Forum} />
-              <Route path="/friends" component={Friends} />
+              <Route 
+                path="/friends" 
+                render={props => (
+                  <Friends 
+                    {...props}
+                    theId={this.state.userId}
+                  />
+                )} 
+              />
               <Route path="/archive" component={Archive} />
               <Route 
                 path="/user-profile" 
@@ -57,6 +65,7 @@ export default class App extends Component {
                   <UserProfile 
                     {...props}
                     signOutClick={this.signOutClick}
+                    theId={this.state.userId}
                   />
                 )}
               />

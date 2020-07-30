@@ -48,10 +48,10 @@ export default class Login extends Component {
         event.preventDefault(); 
     }
 
-    //TODO 
+    //TODO: Fix the sign in error.
     // componentWillUnmount() {
     //     this.setState({
-    //         id: null,
+    //         userId: null,
     //         password: "",
     //         nameInput: "",
     //         passwordInput: ""

@@ -20,20 +20,21 @@ function GreenIcon() {
 }
 
 export default class Friends extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
+            userId: "",
             name: "",
             friendly: false,
             inLebaron: false,
-            business: "",
+            business: "", 
             about: ""
         }
     }
 
     componentDidMount() {
-        axios.get("http://localhost:3000/users/2").then((res) => {
+        axios.get(`http://localhost:3000/users/${this.state.userId}`).then((res) => {
             this.setState({
                 friendly: res.data.friendly,
                 inLebaron: res.data.inLebaron,
@@ -45,6 +46,9 @@ export default class Friends extends Component {
     }
 
     render() {
+        let theId = this.props.theId;
+        this.state.userId = theId;
+
         let lebIcon;
         let friendlyIcon;
 
