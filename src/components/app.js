@@ -16,7 +16,7 @@ export default class App extends Component {
     Icons();
 
     this.state = {
-      loggedInStatus: "NOT_LOGGED_IN",
+      loggedInStatus: "LOGGED_IN",
       userId: null
     }
 
