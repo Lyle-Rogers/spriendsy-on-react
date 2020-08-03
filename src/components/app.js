@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import NavigationContainer from "./navigation/navigation-container";
@@ -17,52 +17,50 @@ export default class App extends Component {
 
     this.state = {
       loggedInStatus: "LOGGED_IN",
-      userId: null
-    }
+      // userId: null,
+      userId: "Lyle Chandler Rogers"
+    };
 
     this.signOutClick = this.signOutClick.bind(this);
     this.unlockSpriendsy = this.unlockSpriendsy.bind(this);
   }
-  
+
   unlockSpriendsy(theId) {
     this.setState({
       loggedInStatus: "LOGGED_IN",
-      userId: theId
-    })
+      userId: theId,
+    });
 
-    event.preventDefault();  
+    event.preventDefault();
   }
 
   signOutClick() {
     this.setState({
-      loggedInStatus: "NOT_LOGGED_IN"
-    })
+      loggedInStatus: "NOT_LOGGED_IN",
+    });
   }
 
   render() {
     if (this.state.loggedInStatus === "LOGGED_IN") {
       return (
-        <div className='container'>
+        <div className="container">
           <Router>
             <div>
               <NavigationContainer />
             </div>
             <Switch>
               <Route exact path="/" component={Forum} />
-              <Route 
-                path="/friends" 
-                render={props => (
-                  <Friends 
-                    {...props}
-                    theId={this.state.userId}
-                  />
-                )} 
+              <Route
+                path="/friends"
+                render={(props) => (
+                  <Friends {...props} theId={this.state.userId} />
+                )}
               />
               <Route path="/archive" component={Archive} />
-              <Route 
-                path="/user-profile" 
-                render={props => (
-                  <UserProfile 
+              <Route
+                path="/user-profile"
+                render={(props) => (
+                  <UserProfile
                     {...props}
                     signOutClick={this.signOutClick}
                     theId={this.state.userId}
@@ -72,13 +70,9 @@ export default class App extends Component {
             </Switch>
           </Router>
         </div>
-      )
+      );
     } else {
-      return (
-        <Login 
-          unlockSpriendsy={this.unlockSpriendsy}
-        />
-      )
+      return <Login unlockSpriendsy={this.unlockSpriendsy} />;
     }
   }
 }

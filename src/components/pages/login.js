@@ -27,7 +27,7 @@ export default class Login extends Component {
             }
         }
 
-        event.preventDefault(); 
+        event.preventDefault();
     }
 
     handleChange(e) {
@@ -45,18 +45,8 @@ export default class Login extends Component {
         });
 
         this.handleSubmit();
-        event.preventDefault(); 
+        event.preventDefault();
     }
-
-    //TODO: Fix the sign in error.
-    // componentWillUnmount() {
-    //     this.setState({
-    //         userId: null,
-    //         password: "",
-    //         nameInput: "",
-    //         passwordInput: ""
-    //     })
-    // }
 
     render() {
         return (
@@ -68,7 +58,7 @@ export default class Login extends Component {
                 </div>
                 <form className="login-form" onSubmit={this.intruderCheck}>
                     <div className="login-name">
-                        <input 
+                        <input
                             name="nameInput"
                             placeholder="Your user name"
                             maxLength="20"
@@ -76,7 +66,7 @@ export default class Login extends Component {
                         />
                     </div>
                     <div className="login-password">
-                        <input 
+                        <input
                             name="passwordInput"
                             placeholder="Password"
                             maxLength="20"
@@ -88,7 +78,7 @@ export default class Login extends Component {
                             LOG IN
                         </div>
                         <div className="worship-icon">
-                            <FontAwesomeIcon icon="place-of-worship"/>
+                            <FontAwesomeIcon icon="place-of-worship" />
                         </div>
                     </button>
                 </form>
