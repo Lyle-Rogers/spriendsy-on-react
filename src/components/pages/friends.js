@@ -29,7 +29,6 @@ export default class Friends extends Component {
       userId: "",
       friendly: false,
       inLebaron: false,
-      friendInView: "Lyle Chandler Rogers",
       business: "",
       about: ""
     };
@@ -38,9 +37,13 @@ export default class Friends extends Component {
   }
 
   friendClick(theId) {
-    this.setState({
-      friendInView: theId
-    })
+    axios.get(`http://localhost:3000/users/${theId}`)
+      .then((res) => {
+        this.setState({
+          business: res.data.business,
+          about: res.data.about
+        })
+      })
   }
 
   componentDidMount() {
@@ -52,15 +55,6 @@ export default class Friends extends Component {
           inLebaron: res.data.inLebaron
         });
       });
-
-    axios
-      .get(`http://localhost:3000/users/${this.state.friendInView}`)
-      .then((res) => {
-        this.setState({
-          business: res.data.business,
-          about: res.data.about
-        })
-      })
   }
 
   render() {
