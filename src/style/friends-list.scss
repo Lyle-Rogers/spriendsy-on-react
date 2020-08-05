@@ -1,57 +1,46 @@
 .friends-list-wrapper {
-  margin-top: 2.4em;
+  padding-top: 2.4em;
   margin-left: -20px;
 
-  .friend {
-    cursor: pointer;
+  .lyle-rogers {
+    @include friend-list-profile();
+  }
 
-    input {
-      font-family: 'Roboto', sans-serif;
-      color: #000000;
-      font-size: 13px;
-      width: 10.2em;
-      border: none;
-      text-align: center;
-      background: transparent;
-      outline: none;
-      font-weight: 1000;
-    }
+  .joshua-lebaron {
+    @include friend-list-profile();
+  }
 
-    .friends-list-activity-wrapper {
-      display: flex;
-      margin-top: -20px;
-      margin-left: 12px;
+  .hector-herrera-bustillos {
+    @include friend-list-profile();
+  }
 
-      .leb-activity {
-        font-family: "Odibee Sans", cursive;
-        display: flex;
+  .jenifer-spencer {
+    @include friend-list-profile();
+  }
 
-        h4 {
-          margin-right: 2px;
-          font-size: 13px;
-        }
+  .auston-jones {
+    @include friend-list-profile();
+  }
 
-        svg {
-          padding-top: 19px;
-          margin-right: 5px;
-          font-size: 12px;
-        }
-      }
+  .don-lebaron {
+    @include friend-list-profile();
+  }
 
-      .friendly-activity {
-        font-family: "Odibee Sans", cursive;
-        display: flex;
+  .clayton-lebaron {
+    @include friend-list-profile();
+  }
+  
+  .justin-lebaron {
+    @include friend-list-profile();
+  }
 
-        h4 {
-          margin-right: 2px;
-          font-size: 13px;
-        }
+  .mario-lebaron {
+    @include friend-list-profile();
+  }
 
-        svg {
-          padding-top: 20px;
-          font-size: 12px;
-        }
-      }
-    }
+  .annika-lebaron {
+    @include friend-list-profile();
   }
 }
+
+

@@ -1,0 +1,57 @@
+@mixin friend-list-profile {
+  cursor: pointer;
+  height: 40px;
+
+  &:active {
+    background-color: rgba(83, 83, 83, 0.322);
+  }
+
+  input {
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    font-size: 13px;
+    width: 10.2em;
+    border: none;
+    text-align: center;
+    background: transparent;
+    outline: none;
+    font-weight: 1000;
+  }
+
+  .friends-list-activity-wrapper {
+    display: flex;
+    margin-top: -20px;
+    margin-left: 12px;
+
+    .leb-activity {
+      font-family: "Odibee Sans", cursive;
+      display: flex;
+
+      h4 {
+        margin-right: 2px;
+        font-size: 13px;
+      }
+
+      svg {
+        padding-top: 19px;
+        margin-right: 5px;
+        font-size: 12px;
+      }
+    }
+
+    .friendly-activity {
+      font-family: "Odibee Sans", cursive;
+      display: flex;
+
+      h4 {
+        margin-right: 2px;
+        font-size: 13px;
+      }
+
+      svg {
+        padding-top: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}
