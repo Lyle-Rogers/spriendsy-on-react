@@ -18,7 +18,7 @@ export default class App extends Component {
     this.state = {
       loggedInStatus: "LOGGED_IN",
       // userId: null,
-      userId: "Lyle Chandler Rogers"
+      userId: "Lyle Rogers"
     };
 
     this.signOutClick = this.signOutClick.bind(this);

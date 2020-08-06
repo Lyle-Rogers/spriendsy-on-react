@@ -18,17 +18,13 @@
         }
     }
 
-    .name-input input {
+    .contact-info-input input {
         border: none;
-        font-family: 'Sriracha', cursive;
-        font-size: 15px;
+        font-family: 'Teko', sans-serif;
+        font-size: 13px;
         border-bottom: 2px solid rgb(0, 148, 247);
         margin-top: 7px;
-        padding-right: 8em;
-    }
-
-    .name-input input:focus {
-        outline: none; 
+        width: 20.8em;
     }
 
     .top-of-activity-buttons {

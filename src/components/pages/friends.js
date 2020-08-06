@@ -30,7 +30,9 @@ export default class Friends extends Component {
       friendly: false,
       inLebaron: false,
       business: "",
-      about: ""
+      about: "",
+      contactInfo: "",
+      profileInVeiw: null
     };
 
     this.friendClick = this.friendClick.bind(this);
@@ -41,7 +43,9 @@ export default class Friends extends Component {
       .then((res) => {
         this.setState({
           business: res.data.business,
-          about: res.data.about
+          about: res.data.about,
+          contactInfo: res.data.contactInfo,
+          profileInVeiw: theId
         })
       })
   }
@@ -63,17 +67,28 @@ export default class Friends extends Component {
 
     let lebIcon;
     let friendlyIcon;
-
     if (this.state.inLebaron === false) {
       lebIcon = <RedIcon />;
     } else {
       lebIcon = <GreenIcon />;
     }
-
     if (this.state.friendly === false) {
       friendlyIcon = <RedIcon />;
     } else {
       friendlyIcon = <GreenIcon />;
+    }
+
+    let businessPlaceHolder;
+    let aboutPlaceHolder;
+    let contactPlaceHolder;
+    if (this.state.profileInVeiw === null) {
+      businessPlaceHolder = "Please select a profile.";
+      aboutPlaceHolder = "Please select a profile.";
+      contactPlaceHolder = "Please select a profile.";
+    } else {
+      businessPlaceHolder = "This person doesn't have their business set up yet.";
+      aboutPlaceHolder = "This person has nothing to say about themself.";
+      contactPlaceHolder = "No contact info!"
     }
 
     return (
@@ -91,23 +106,23 @@ export default class Friends extends Component {
               </div>
             </div>
           </div>
-          <div className="user-edit">
-            <div className="edit-icon-container">
-              <NavLink to="/user-profile" activeClassName="nav-link-active">
+          <NavLink to="/user-profile" activeClassName="nav-link-active">
+            <div className="user-edit">
+              <div className="edit-icon-container">
                 <FontAwesomeIcon icon="user-edit" />
-              </NavLink>
+              </div>
+              <div className="user-name">
+                <input value={this.state.userId} readOnly />
+              </div>
             </div>
-            <div className="user-name">
-              <input value={this.state.userId} readOnly />
-            </div>
-          </div>
+          </NavLink>
         </div>
         <div className="bottom-column">
           <div className="left-side">
             <div className="buisiness-textarea">
-              <h4>BUISINESS</h4>
+              <h4>BUSINESS</h4>
               <textarea
-                placeholder="This person doesn't have their business set up yet."
+                placeholder={businessPlaceHolder}
                 readOnly
                 value={this.state.business}
               />
@@ -115,9 +130,17 @@ export default class Friends extends Component {
             <div className="about-textarea">
               <h4>ABOUT</h4>
               <textarea
-                placeholder="This person has nothing to say about themself."
+                placeholder={aboutPlaceHolder}
                 readOnly
                 value={this.state.about}
+              />
+            </div>
+            <div className="contact-info-input">
+              <h4>CONTACT INFO</h4>
+              <input
+                placeholder={contactPlaceHolder}
+                readOnly
+                value={this.state.contactInfo}
               />
             </div>
           </div>

@@ -2,15 +2,16 @@
   cursor: pointer;
   height: 40px;
 
-  &:active {
-    background-color: rgba(83, 83, 83, 0.322);
+  &:active, &:focus {
+    background-color: rgba(1, 1, 1, 0.342);
+    overflow: hidden;
   }
 
   input {
     font-family: 'Roboto', sans-serif;
     color: #000000;
     font-size: 13px;
-    width: 10.2em;
+    width: 10.3em;
     border: none;
     text-align: center;
     background: transparent;
@@ -21,7 +22,7 @@
   .friends-list-activity-wrapper {
     display: flex;
     margin-top: -20px;
-    margin-left: 12px;
+    margin-left: 13px;
 
     .leb-activity {
       font-family: "Odibee Sans", cursive;

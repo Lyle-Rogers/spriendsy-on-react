@@ -53,8 +53,8 @@ export default class FriendsList extends Component {
       ALinLebaron: false,
       ALfriendly: false,
 
-      // inLebaron: false,
-      // friendly: false,
+      ELinLebaron: false,
+      ELfriendly: false,
 
       // inLebaron: false,
       // friendly: false,
@@ -65,7 +65,7 @@ export default class FriendsList extends Component {
   }
 
   componentWillMount() {
-    Axios.get("http://localhost:3000/users/Lyle Chandler Rogers")
+    Axios.get("http://localhost:3000/users/Lyle Rogers")
       .then((res) => {
         this.setState({
           LRinLebaron: res.data.inLebaron,
@@ -145,13 +145,13 @@ export default class FriendsList extends Component {
         })
       })
 
-    // Axios.get("http://localhost:3000/users/")
-    //   .then((res) => {
-    //     this.setState({
-    //       inLebaron: res.data.inLebaron,
-    //       friendly: res.data.friendly
-    //     })
-    //   })
+    Axios.get("http://localhost:3000/users/Enoch Lebaron")
+      .then((res) => {
+        this.setState({
+          ELinLebaron: res.data.inLebaron,
+          ELfriendly: res.data.friendly
+        })
+      })
 
     // Axios.get("http://localhost:3000/users/")
     //   .then((res) => {
@@ -317,18 +317,18 @@ export default class FriendsList extends Component {
       ALfriendlyIcon = <GreenIcon />;
     }
 
-    // let lebIcon;
-    // let friendlyIcon;
-    // if (this.state.inLebaron === false) {
-    //   lebIcon = <RedIcon />;
-    // } else {
-    //   lebIcon = <GreenIcon />;
-    // }
-    // if (this.state.friendly === false) {
-    //   friendlyIcon = <RedIcon />;
-    // } else {
-    //   friendlyIcon = <GreenIcon />;
-    // }
+    let ELlebIcon;
+    let ELfriendlyIcon;
+    if (this.state.ELinLebaron === false) {
+      ELlebIcon = <RedIcon />;
+    } else {
+      ELlebIcon = <GreenIcon />;
+    }
+    if (this.state.ELfriendly === false) {
+      ELfriendlyIcon = <RedIcon />;
+    } else {
+      ELfriendlyIcon = <GreenIcon />;
+    }
 
     // let lebIcon;
     // let friendlyIcon;
@@ -384,8 +384,8 @@ export default class FriendsList extends Component {
 
     return (
       <div className="friends-list-wrapper">
-        <div className="lyle-rogers" onClick={() => this.props.friendClick("Lyle Chandler Rogers")}>
-          <input value="Lyle Chandler Rogers" readOnly />
+        <div className="lyle-rogers" onClick={() => this.props.friendClick("Lyle Rogers")}>
+          <input value="Lyle Rogers" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
               <h4>In Lebaron:</h4>
@@ -518,19 +518,19 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        {/* <div className="friend" onClick={() => this.props.friendClick("")}>
-          <input value="" readOnly />
+        <div className="enoch-lebaron" onClick={() => this.props.friendClick("Enoch Lebaron")}>
+          <input value="Enoch Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
               <h4>In Lebaron:</h4>
-              {lebIcon}
+              {ELlebIcon}
             </div>
             <div className="friendly-activity">
               <h4>Friendly:</h4>
-              {friendlyIcon}
+              {ELfriendlyIcon}
             </div>
           </div>
-        </div> */}
+        </div>
         {/* <div className="friend" onClick={() => this.props.friendClick("")}>
           <input value="" readOnly />
           <div className="friends-list-activity-wrapper">

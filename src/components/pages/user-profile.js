@@ -29,7 +29,7 @@ export default class UserProfile extends Component {
         this.state = {
             userId: "",
             contactInfo: "",
-            friendly: false, 
+            friendly: false,
             inLebaron: false,
             business: "",
             about: ""
@@ -42,14 +42,14 @@ export default class UserProfile extends Component {
 
     handleSubmit() {
         axios.patch(`http://localhost:3000/users/${this.state.userId}`, {
-            name: this.state.name,
+            contactInfo: this.state.contactInfo,
             friendly: this.state.friendly,
             inLebaron: this.state.inLebaron,
             business: this.state.business,
             about: this.state.about
         })
 
-        event.preventDefault(); 
+        event.preventDefault();
         this.props.history.push("/friends");
     }
 
@@ -58,8 +58,8 @@ export default class UserProfile extends Component {
             this.setState({
                 inLebaron: true
             })
-        } 
-        
+        }
+
         if (this.state.inLebaron === true) {
             this.setState({
                 inLebaron: false
@@ -72,8 +72,8 @@ export default class UserProfile extends Component {
             this.setState({
                 friendly: true
             })
-        } 
-        
+        }
+
         if (this.state.friendly === true) {
             this.setState({
                 friendly: false
@@ -90,6 +90,7 @@ export default class UserProfile extends Component {
     componentDidMount() {
         axios.get(`http://localhost:3000/users/${this.state.userId}`).then((res) => {
             this.setState({
+                contactInfo: res.data.contactInfo,
                 friendly: res.data.friendly,
                 inLebaron: res.data.inLebaron,
                 business: res.data.business,
@@ -106,44 +107,43 @@ export default class UserProfile extends Component {
         let friendlyButton;
 
         if (this.state.inLebaron === false) {
-            lebButton = <RedIcon onClick={this.lebButtonClick}/>;
+            lebButton = <RedIcon onClick={this.lebButtonClick} />;
         } else {
-            lebButton = <GreenIcon onClick={this.lebButtonClick}/>;
+            lebButton = <GreenIcon onClick={this.lebButtonClick} />;
         }
 
         if (this.state.friendly === false) {
-            friendlyButton = <RedIcon onClick={this.friendlyButtonClick}/>;
+            friendlyButton = <RedIcon onClick={this.friendlyButtonClick} />;
         } else {
-            friendlyButton = <GreenIcon onClick={this.friendlyButtonClick}/>;
+            friendlyButton = <GreenIcon onClick={this.friendlyButtonClick} />;
         }
-        
+
         return (
             <form onSubmit={this.handleSubmit} className="user-profile-container">
                 <div className="signout-container">
                     <a onClick={this.props.signOutClick}>
                         SIGN OUT
-                        <FontAwesomeIcon icon="sign-out-alt"/>
+                        <FontAwesomeIcon icon="sign-out-alt" />
                     </a>
                 </div>
-                <div className="name-input">
-                    <input 
-                        name="name"
-                        type="text"
-                        placeholder="Your name"
-                        value={this.state.name}
+                <div className="contact-info-input">
+                    <input
+                        name="contactInfo"
+                        placeholder="Please give a desired way for Spriendsy members to contact you."
+                        value={this.state.contactInfo}
                         onChange={this.handleChange}
-                        maxLength="20"
+                        maxLength="1000"
                     />
                 </div>
                 <div className="top-of-activity-buttons">
-                    <h6 className="penut">Are you looking for new friends? By submiting that you'r friendly, means</h6>
-                    <h6 className="just-nut">you are ok with other people trying to get to know you or hit you up.</h6>
+                    <h6 className="penut">Are you looking for new spiritual friends? By submiting that you'r friendly,</h6>
+                    <h6 className="just-nut">means you are ok with other people trying to know you or contact you.</h6>
                 </div>
                 <div className="avtivity-buttons">
                     <div className="leb-button">
                         <h4>In Lebaron:</h4>
                         <div className="leb-icon">
-                            {lebButton}                        
+                            {lebButton}
                         </div>
                     </div>
                     <div className="friendly-button">
@@ -154,8 +154,8 @@ export default class UserProfile extends Component {
                     </div>
                 </div>
                 <div className="business-edit-textarea">
-                    <h4>BUISINESS</h4>  
-                    <textarea 
+                    <h4>BUISINESS</h4>
+                    <textarea
                         placeholder="Edit your business"
                         name="business"
                         value={this.state.business}
@@ -165,7 +165,7 @@ export default class UserProfile extends Component {
                 </div>
                 <div className="about-edit-textarea">
                     <h4>ABOUT</h4>
-                    <textarea 
+                    <textarea
                         placeholder="Edit your about status"
                         name="about"
                         value={this.state.about}
@@ -178,7 +178,7 @@ export default class UserProfile extends Component {
                         SAVE
                     </div>
                     <div className="worship-icon">
-                        <FontAwesomeIcon icon="place-of-worship"/>
+                        <FontAwesomeIcon icon="place-of-worship" />
                     </div>
                 </button>
             </form>
@@ -187,4 +187,4 @@ export default class UserProfile extends Component {
 }
 
 
-    
+

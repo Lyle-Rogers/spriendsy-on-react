@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 16.2em;
+  height: 15em;
 
   .top-column {
     display: flex;
@@ -56,7 +56,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-left: 6.8em;
+      margin-left: 5.7em;
 
       svg {
         color: #bd8100;
@@ -120,12 +120,28 @@
           height: 8em;
           margin-right: 2em;
           margin-top: 1em;
-          margin-bottom: 2em;
           border-width: 2px;
           border-color: rgb(0, 148, 247);
           border-radius: 8px;
           resize: none;
           line-height: 13px;
+        }
+      }
+
+      .contact-info-input {
+        h4 {
+          margin-bottom: -3px;
+          margin-left: 2em;
+        }
+
+        input {
+           border: none;
+          font-family: 'Teko', sans-serif;
+          font-size: 13px;
+          border-bottom: 2px solid rgb(0, 148, 247);
+          margin-top: 7px;
+          width: 12.8em;
+          animation: 10s slide-left;
         }
       }
     }
