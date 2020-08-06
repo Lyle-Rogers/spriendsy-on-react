@@ -1,6 +1,10 @@
 .friends-list-wrapper {
-  padding-top: 2.4em;
+  margin-top: 2.8em;
   margin-left: -20px;
+  height: 280px; 
+  width: 8.5em;
+  overflow:hidden; 
+  overflow-y:scroll;
 
   .lyle-rogers {
     @include friend-list-profile();
