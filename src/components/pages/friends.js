@@ -32,7 +32,7 @@ export default class Friends extends Component {
       business: "",
       about: "",
       contactInfo: "",
-      profileInVeiw: null
+      profileInView: null
     };
 
     this.friendClick = this.friendClick.bind(this);
@@ -45,7 +45,7 @@ export default class Friends extends Component {
           business: res.data.business,
           about: res.data.about,
           contactInfo: res.data.contactInfo,
-          profileInVeiw: theId
+          profileInView: theId
         })
       })
   }
@@ -147,6 +147,7 @@ export default class Friends extends Component {
           <div className="right-side">
             <FriendsList
               friendClick={this.friendClick}
+              profileInView={this.state.profileInView}
             />
           </div>
         </div>

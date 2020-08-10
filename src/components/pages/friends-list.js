@@ -23,6 +23,8 @@ export default class FriendsList extends Component {
     super()
 
     this.state = {
+      profileInView: null,
+
       LRinLebaron: true,
       LRfriendly: false,
 
@@ -187,8 +189,12 @@ export default class FriendsList extends Component {
   }
 
   render() {
+    let profileInView = this.props.profileInView;
+    this.state.profileInView = profileInView;
+
     let LRlebIcon;
     let LRfriendlyIcon;
+    let LRbackgroundColor;
     if (this.state.LRinLebaron === false) {
       LRlebIcon = <RedIcon />;
     } else {
@@ -199,9 +205,15 @@ export default class FriendsList extends Component {
     } else {
       LRfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Lyle Rogers") {
+      LRbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      LRbackgroundColor = "none"
+    }
 
     let JLlebIcon;
     let JLfriendlyIcon;
+    let JLbackgroundColor;
     if (this.state.JLinLebaron === false) {
       JLlebIcon = <RedIcon />;
     } else {
@@ -212,9 +224,15 @@ export default class FriendsList extends Component {
     } else {
       JLfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Joshua Lebaron") {
+      JLbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      JLbackgroundColor = "none"
+    }
 
     let HHBlebIcon;
     let HHBfriendlyIcon;
+    let HHBbackgroundColor;
     if (this.state.HHBinLebaron === false) {
       HHBlebIcon = <RedIcon />;
     } else {
@@ -225,9 +243,15 @@ export default class FriendsList extends Component {
     } else {
       HHBfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Hector Herrera Bustillos") {
+      HHBbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      HHBbackgroundColor = "none"
+    }
 
     let JPlebIcon;
     let JPfriendlyIcon;
+    let JPbackgroundColor;
     if (this.state.JPinLebaron === false) {
       JPlebIcon = <RedIcon />;
     } else {
@@ -238,9 +262,15 @@ export default class FriendsList extends Component {
     } else {
       JPfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Jenifer Spencer") {
+      JPbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      JPbackgroundColor = "none"
+    }
 
     let AJlebIcon;
     let AJfriendlyIcon;
+    let AJbackgroundColor;
     if (this.state.AJinLebaron === false) {
       AJlebIcon = <RedIcon />;
     } else {
@@ -251,9 +281,15 @@ export default class FriendsList extends Component {
     } else {
       AJfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Auston Jones") {
+      AJbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      AJbackgroundColor = "none"
+    }
 
     let DLlebIcon;
     let DLfriendlyIcon;
+    let DLbackgroundColor;
     if (this.state.DLinLebaron === false) {
       DLlebIcon = <RedIcon />;
     } else {
@@ -264,9 +300,15 @@ export default class FriendsList extends Component {
     } else {
       DLfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Don Lebaron") {
+      DLbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      DLbackgroundColor = "none"
+    }
 
     let CLlebIcon;
     let CLfriendlyIcon;
+    let CLbackgroundColor;
     if (this.state.CLinLebaron === false) {
       CLlebIcon = <RedIcon />;
     } else {
@@ -277,9 +319,15 @@ export default class FriendsList extends Component {
     } else {
       CLfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Clayton Lebaron") {
+      CLbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      CLbackgroundColor = "none"
+    }
 
     let JL2lebIcon;
     let JL2friendlyIcon;
+    let JL2backgroundColor;
     if (this.state.JL2inLebaron === false) {
       JL2lebIcon = <RedIcon />;
     } else {
@@ -290,9 +338,15 @@ export default class FriendsList extends Component {
     } else {
       JL2friendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Justin Lebaron") {
+      JL2backgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      JL2backgroundColor = "none"
+    }
 
     let MLlebIcon;
     let MLfriendlyIcon;
+    let MLbackgroundColor;
     if (this.state.MLinLebaron === false) {
       MLlebIcon = <RedIcon />;
     } else {
@@ -303,9 +357,15 @@ export default class FriendsList extends Component {
     } else {
       MLfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Mario Lebaron") {
+      MLbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      MLbackgroundColor = "none"
+    }
 
     let ALlebIcon;
     let ALfriendlyIcon;
+    let ALbackgroundColor;
     if (this.state.ALinLebaron === false) {
       ALlebIcon = <RedIcon />;
     } else {
@@ -316,9 +376,15 @@ export default class FriendsList extends Component {
     } else {
       ALfriendlyIcon = <GreenIcon />;
     }
+    if (this.state.profileInView === "Annika Lebaron") {
+      ALbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      ALbackgroundColor = "none"
+    }
 
     let ELlebIcon;
     let ELfriendlyIcon;
+    let ELbackgroundColor;
     if (this.state.ELinLebaron === false) {
       ELlebIcon = <RedIcon />;
     } else {
@@ -328,6 +394,11 @@ export default class FriendsList extends Component {
       ELfriendlyIcon = <RedIcon />;
     } else {
       ELfriendlyIcon = <GreenIcon />;
+    }
+    if (this.state.profileInView === "Enoch Lebaron") {
+      ELbackgroundColor = "rgba(1, 1, 1, 0.342)"
+    } if (this.state.profileInView === null) {
+      ELbackgroundColor = "none"
     }
 
     // let lebIcon;
@@ -384,7 +455,13 @@ export default class FriendsList extends Component {
 
     return (
       <div className="friends-list-wrapper">
-        <div className="lyle-rogers" onClick={() => this.props.friendClick("Lyle Rogers")}>
+        <div
+          className="lyle-rogers"
+          onClick={() => this.props.friendClick("Lyle Rogers")}
+          style={{
+            backgroundColor: LRbackgroundColor
+          }}
+        >
           <input value="Lyle Rogers" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -398,7 +475,13 @@ export default class FriendsList extends Component {
           </div>
         </div>
 
-        <div className="joshua-lebaron" onClick={() => this.props.friendClick("Joshua Lebaron")}>
+        <div
+          className="joshua-lebaron"
+          onClick={() => this.props.friendClick("Joshua Lebaron")}
+          style={{
+            backgroundColor: JLbackgroundColor
+          }}
+        >
           <input value="Joshua Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -412,7 +495,13 @@ export default class FriendsList extends Component {
           </div>
         </div>
 
-        <div className="hector-herrera-bustillos" onClick={() => this.props.friendClick("Hector Herrera Bustillos")}>
+        <div
+          className="hector-herrera-bustillos"
+          onClick={() => this.props.friendClick("Hector Herrera Bustillos")}
+          style={{
+            backgroundColor: HHBbackgroundColor
+          }}
+        >
           <input value="Hector Herrera Bustillos" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -426,7 +515,13 @@ export default class FriendsList extends Component {
           </div>
         </div>
 
-        <div className="jenifer-spencer" onClick={() => this.props.friendClick("Jenifer Spencer")}>
+        <div
+          className="jenifer-spencer"
+          onClick={() => this.props.friendClick("Jenifer Spencer")}
+          style={{
+            backgroundColor: JPbackgroundColor
+          }}
+        >
           <input value="Jenifer Spencer" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -440,7 +535,13 @@ export default class FriendsList extends Component {
           </div>
         </div>
 
-        <div className="auston-jones" onClick={() => this.props.friendClick("Auston Jones")}>
+        <div
+          className="auston-jones"
+          onClick={() => this.props.friendClick("Auston Jones")}
+          style={{
+            backgroundColor: AJbackgroundColor
+          }}
+        >
           <input value="Auston Jones" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -453,7 +554,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="don-lebaron" onClick={() => this.props.friendClick("Don Lebaron")}>
+
+        <div
+          className="don-lebaron"
+          onClick={() => this.props.friendClick("Don Lebaron")}
+          style={{
+            backgroundColor: DLbackgroundColor
+          }}
+        >
           <input value="Don Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -466,7 +574,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="clayton-lebaron" onClick={() => this.props.friendClick("Clayton Lebaron")}>
+
+        <div
+          className="clayton-lebaron"
+          onClick={() => this.props.friendClick("Clayton Lebaron")}
+          style={{
+            backgroundColor: CLbackgroundColor
+          }}
+        >
           <input value="Clayton Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -479,7 +594,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="justin-lebaron" onClick={() => this.props.friendClick("Justin Lebaron")}>
+
+        <div
+          className="justin-lebaron"
+          onClick={() => this.props.friendClick("Justin Lebaron")}
+          style={{
+            backgroundColor: JL2backgroundColor
+          }}
+        >
           <input value="Justin Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -492,7 +614,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="mario-lebaron" onClick={() => this.props.friendClick("Mario Lebaron")}>
+
+        <div
+          className="mario-lebaron"
+          onClick={() => this.props.friendClick("Mario Lebaron")}
+          style={{
+            backgroundColor: MLbackgroundColor
+          }}
+        >
           <input value="Mario Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -505,7 +634,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="annika-lebaron" onClick={() => this.props.friendClick("Annika Lebaron")}>
+
+        <div
+          className="annika-lebaron"
+          onClick={() => this.props.friendClick("Annika Lebaron")}
+          style={{
+            backgroundColor: ALbackgroundColor
+          }}
+        >
           <input value="Annika Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -518,7 +654,14 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
-        <div className="enoch-lebaron" onClick={() => this.props.friendClick("Enoch Lebaron")}>
+
+        <div
+          className="enoch-lebaron"
+          onClick={() => this.props.friendClick("Enoch Lebaron")}
+          style={{
+            backgroundColor: ELbackgroundColor
+          }}
+        >
           <input value="Enoch Lebaron" readOnly />
           <div className="friends-list-activity-wrapper">
             <div className="leb-activity">
@@ -531,6 +674,7 @@ export default class FriendsList extends Component {
             </div>
           </div>
         </div>
+
         {/* <div className="friend" onClick={() => this.props.friendClick("")}>
           <input value="" readOnly />
           <div className="friends-list-activity-wrapper">

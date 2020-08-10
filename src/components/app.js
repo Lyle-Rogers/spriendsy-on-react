@@ -17,7 +17,7 @@ export default class App extends Component {
 
     this.state = {
       loggedInStatus: "LOGGED_IN",
-      // userId: null,
+      // userId: null
       userId: "Lyle Rogers"
     };
 
